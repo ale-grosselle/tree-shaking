@@ -1,0 +1,70 @@
+{
+	"name": "app-with-rollup",
+	"author": "Alessandro Grosselle",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+http://git.newvision.it/ux-commons/thron-ux-models.git"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+		}
+	],
+	"dependencies": {
+		"rollup-starter-lib": "../rollupLib"
+	},
+	"main": "dist/thron-models-min.js",
+	"directories": {},
+	"engines": {
+		"node": ">= 4.0.0",
+		"npm": ">= 3.0.0"
+	},
+	"scripts": {
+		"dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
+		"dev:module": "npm link && node build/scripts/build.js module",
+		"build": "node build/scripts/build.js production",
+		"documentation": "documentation build src/** -f html -o docs",
+		"flow-typed-createstub": "flow-typed create-stub rollup-starter-lib",
+		"flow-type": "flow-typed install",
+		"flow-gen": "flow gen-flow-files src --out-dir dist",
+		"flow": "flow",
+		"eslint-error": "eslint --ext .js,.vue src test",
+		"eslint-fix": "eslint --ext .js,.vue src test --fix",
+		"precommit": "npm run eslint-fix && npm run eslint-error"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.0",
+		"babel-eslint": "^7.1.1",
+		"babel-loader": "^7.1.2",
+		"babel-minify-webpack-plugin": "^0.3.1",
+		"babel-plugin-add-module-exports": "^0.2.1",
+		"babel-plugin-syntax-dynamic-import": "^6.18.0",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-flow": "^6.23.0",
+		"chalk": "^2.0",
+		"documentation": "^5.4.0",
+		"eslint": "^4.18.2",
+		"eslint-friendly-formatter": "^3.0.0",
+		"eslint-loader": "^2.0.0",
+		"eslint-plugin-flowtype-errors": "^3.5.1",
+		"eslint-plugin-html": "^4.0.2",
+		"eslint-plugin-vue": "^4.3.0",
+		"flow-bin": "^0.66.0",
+		"friendly-errors-webpack-plugin": "^1.6.1",
+		"html-webpack-plugin": "^2.30.1",
+		"node-notifier": "^5.1.2",
+		"ora": "^1.2.0",
+		"prettier": "^1.11.1",
+		"rimraf": "^2.6.0",
+		"shelljs": "^0.7.6",
+		"webpack": "^3.10.0",
+		"webpack-bundle-analyzer": "^2.9.1",
+		"webpack-dev-server": "^2.9.7",
+		"webpack-merge": "^4.1.0",
+		"webpack-require-http": "^0.4.3"
+	}
+}

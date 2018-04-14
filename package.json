@@ -1,0 +1,13 @@
+{
+  "name": "main-app",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "build": "cd rollupLib && npm run build && cd ../webpackApp && npm run build",
+    "install:all": "cd rollupLib && npm install && cd ../webpackApp && npm install"
+  },
+  "files": [
+    "dist"
+  ]
+}
