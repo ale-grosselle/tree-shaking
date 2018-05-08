@@ -13,7 +13,7 @@
 		}
 	],
 	"dependencies": {
-		"example-vue-rollup": "../rollupLib"
+		"example-vue-rollup": "../rollupLibrary"
 	},
 	"main": "dist/thron-models-min.js",
 	"directories": {},
