@@ -24,8 +24,9 @@ const webpackConfig = merge(baseWebpackConfig, {
 		new webpack.DefinePlugin({
 			'process.env': env
 		}),
+		//new MinifyPlugin(),
 		// UglifyJs do not support ES6+, you can also use babel-minify for better treeshaking: https://github.com/babel/minify
-		/*new webpack.optimize.UglifyJsPlugin({
+		new webpack.optimize.UglifyJsPlugin({
 	      compress: {
 	        warnings: true,
 	        dead_code: true
@@ -34,12 +35,11 @@ const webpackConfig = merge(baseWebpackConfig, {
 	        comments: false
 	      },
 	      sourceMap: false
-		}),*/
-        new MinifyPlugin(),
+		}),
 		// keep module.id stable when vender modules does not change
 		new webpack.HashedModuleIdsPlugin({deadcode: true}),
 		// enable scope hoisting
-		new webpack.optimize.ModuleConcatenationPlugin()
+		//new webpack.optimize.ModuleConcatenationPlugin()
 	]
 })
 
