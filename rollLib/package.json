@@ -1,0 +1,78 @@
+{
+  "name": "example-vue-rollup",
+  "description": "THRON UX Commons",
+  "version": "1.0.0",
+  "main": "dist/thron-ux-components-vue.cjs.js",
+  "module": "dist/thron-ux-components-vue.esm.js",
+  "browser": "dist/thron-ux-components-vue.umd.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "atomicjs": "^3.2.1",
+    "cash-dom": "^1.3.7",
+    "compass-mixins": "^0.12.10",
+    "cssobj": "^1.3.6",
+    "materialize-css": "1.0.0-alpha.4",
+    "style-inject": "^0.3.0",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-annotate-pure-calls": "^0.2.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "camelcase": "^5.0.0",
+    "chalk": "^2.4.0",
+    "chokidar": "^2.0.3",
+    "copy-dir": "^0.3.0",
+    "documentation": "^6.3.0",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-flowtype-errors": "^3.5.1",
+    "eslint-plugin-vue": "^4.4.0",
+    "flow-bin": "^0.69.0",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.2",
+    "node-xml-lite": "0.0.7",
+    "parse5": "^2.1.0",
+    "path": "^0.12.7",
+    "postcss-assets": "^5.0.0",
+    "postcss-url": "^7.3.2",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "rollup": "^0.57.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-includepaths": "^0.2.2",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^1.5.1",
+    "rollup-plugin-sass": "^0.6.1",
+    "rollup-plugin-scss": "^0.4.0",
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-plugin-sprite": "^0.1.1",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-url": "^1.4.0",
+    "rollup-plugin-vue": "4.0.2",
+    "vue-template-compiler": "^2.5.16",
+    "vue-template-validator": "^1.1.5"
+  },
+  "scripts": {
+    "dev": "node build/scripts/build.js vue",
+    "build": "node build/scripts/build-prod.js && node build/scripts/build-prod.js vanilla && flow stop",
+    "flow-type": "flow-typed installstyle-inject  --ignoreDeps dev",
+    "eslint-error": "eslint --ext .js,.vue src test && flow stop",
+    "eslint-fix": "eslint --ext .js,.vue src test --fix && flow stop"
+  },
+  "files": [
+    "dist"
+  ]
+}

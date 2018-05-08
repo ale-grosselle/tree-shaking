@@ -1,0 +1,6 @@
+.idea
+node_modules
+workspace.xml
+npm-debug.log*
+src/sprite.scss
+src/static/images/sprite.png
