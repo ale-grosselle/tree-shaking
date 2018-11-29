@@ -1,16 +1,4 @@
-import {Button} from 'example-vue-rollup';
-import {Asynch} from 'example-vue-rollup';
-//import {Table} from 'thron-ux-components';
-//import {Modal} from 'example-vue-rollup';
-//import {ContentModel} from 'rollup-starter-lib';
 
-/*class Button{
-	constructor(){}
-}*/
+import {IB} from "example-vue-rollup";
 
-//console.log(Button);
-console.log(new Asynch());
-//console.log(Modal);
-//console.log(Table);
-
-
+console.log(IB);

@@ -13,27 +13,7 @@ const svg = require('./svgSprites');
 //Constants:
 const BUILD_FOR_PRODUCTION = process.env.BUILD === 'production';
 
-let indexRollup = 'src/vueWrapper/index.js';
-let indexFilesNameRollup = 'vue';
-if (process.argv[2] === 'vanilla') {
-	indexRollup = 'src/vanilla/index.js';
-	indexFilesNameRollup = 'vanilla';
-}
-
-function updateName(fileName, appendThis) {
-	if(appendThis === "vue"){
-		return fileName;
-	}else {
-		return fileName.replace("vue", "vanilla");
-	}
-	/*if(fileName.indexOf(appendThis) !== -1){
-		return fileName;
-	}else{
-		const split = fileName.split(".");
-		split[0] = split[0] + '-' + appendThis;
-		return split.join('.');
-	}*/
-}
+let indexRollup = 'src/index.js';
 
 function bundleWithRollup(inputOptions, outputOptions) {
 	// create a bundle
@@ -82,9 +62,6 @@ function watchFiles() {
 		}
 		//Change configuration:
 		config.input = indexRollup;
-		config.output.forEach((output) => {
-			output.file = updateName(output.file, indexFilesNameRollup);
-		});
 		//Add watch:
 		config.watch = {};
 		config.watch.include = globRollup;
@@ -147,7 +124,6 @@ function bundlingCode() {
 		config.input = indexRollup;
 		config.output.forEach((output) => {
 			//Change configuration output:
-			output.file = updateName(output.file, indexFilesNameRollup);
 			promisesRollup.push(bundleWithRollup(config, output));
 		});
 	});
